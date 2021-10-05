@@ -67,13 +67,14 @@
       <pre>
         <code>
           async function fetchKey() {
-            const response = await fetch('https://arcane-plains-58835.herokuapp.com/yourKeyName');
+            const response = await fetch('https://yorkieportunus.herokuapp.com/yourKeyName');
             console.log(response);
             const key = await response.json();
             return key;
           }
           // Call this wherever you need your key.
           const safeKey = fetchKey();
+          console.log(safeKey);
         </code>
       </pre>
     </section>

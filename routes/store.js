@@ -18,6 +18,15 @@ keyRouter.route('/', function(req, res, next) {
     .catch(err => next(err));
 })
 
-/* Todo: POST Route to add key in to DB */
+keyRouter.route('/:key')
+.get((req, res, next) => {
+    KeyStore.find(req.params.key)
+    .then(key => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(key);
+    })
+    .catch(err => next(err));
+})
 
 module.exports = keyRouter;
