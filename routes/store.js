@@ -24,7 +24,7 @@ keyRouter.route('/:key')
     .then(key => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(key);
+        res.send(`Here is your key ${key.apiKey}`);
     })
     .catch(err => next(err));
 })
