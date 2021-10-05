@@ -6,7 +6,7 @@ const keySchema = new Schema({
         type: String,
         required: true
     },
-    description: {
+    apiKey: {
         type: String,
         required: true
     }
@@ -15,6 +15,6 @@ const keySchema = new Schema({
     timestamps: true
 });
 
-const Key = mongoose.model('Key', keySchema);
+const KeyStore = mongoose.model('KeyStore', keySchema);
 
-module.exports = Partner;
+module.exports = KeyStore;
