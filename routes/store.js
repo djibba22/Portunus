@@ -20,7 +20,7 @@ keyRouter.route('/', function(req, res, next) {
 
 keyRouter.route('/:key')
 .get((req, res, next) => {
-    KeyStore.find({"name":req.params.key})
+    KeyStore.findOne({"name":req.params.key})
     .then(key => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
