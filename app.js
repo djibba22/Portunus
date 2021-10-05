@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 
 //mongo db connection here for now
 const url = 'mongodb://localhost:27017/keyStore';
-const connect = mongoose.connect(url, {
+const connect = mongoose.connect(process.env.MONGODB_URI || url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
