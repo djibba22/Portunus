@@ -67,7 +67,7 @@
       <pre>
         <code>
           async function fetchKey() {
-            const response = await fetch('heroku.app/yourKeyName');
+            const response = await fetch('https://arcane-plains-58835.herokuapp.com/yourKeyName');
             console.log(response);
             const key = await response.json();
             return key;
