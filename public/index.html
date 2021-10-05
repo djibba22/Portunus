@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portunus</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.15.14/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
@@ -48,7 +48,7 @@
                               </p>
                                 <p class="control">
                                     <a class="button is-info add">
-                                        Save my Key
+                                        Save my Key 🤟🏼
                                     </a>
                                 </p>
                             </div>
@@ -60,21 +60,33 @@
     <!-- todo add section with usage instructions -->
     <section class="section is-medium is-info center">
       <div class="container">
-        <h1 class="title">Safely store your API Key off of Github</h1>
+        <div class="columns">
+          <div class="column box">
+            <img src="./images/keywarning.png" alt="github warning" srcset="">
+          </div>
+          <div class="column">
+            <h1 class="title is-primary">Safely store your API Key off of Github</h1>
+            <p>We have all seen the warning with storing sensitive data on github. When you are using free api keys and deploying to gh-pages this can be a pain. Without server side code there is no place to safely store these credentials, yet make them available on gh-pages.</p>
+            <p>This is where Portunus steps in. A simple solution to a painful problem. Create a new name for your key and store the actual value some where else. Simply make a request from your application to load your key and github will never know a thing.</p>
+          </div>
+        </div>
       </div>
       <h2 class="subtitle">1. Add a name and value for your key in the form</h2>
       <h2 class="subtitle">2. Place this code snippet into your JS file to retrieve it by your custom name.</h2>
-      <pre>
+      <pre class="box">
         <code>
+          // This calls the API, just update the url to have your key's name.
           async function fetchKey() {
-            const response = await fetch('https://yorkieportunus.herokuapp.com/yourKeyName');
-            console.log(response);
-            const key = await response.json();
-            return key;
+              const url = 'https://cors-anywhere.herokuapp.com/https://yorkieportunus.herokuapp.com/store/mykey'
+              const response = await fetch(url);
+              const key = await response.json();
+              return key;
           }
           // Call this wherever you need your key.
-          const safeKey = fetchKey();
-          console.log(safeKey);
+          fetchKey().then((key) => {
+              secretKey = key.apiKey;
+              console.info(`Your key on Portunus => ${secretKey}`);
+          });
         </code>
       </pre>
     </section>
