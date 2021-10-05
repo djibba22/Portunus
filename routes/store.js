@@ -7,7 +7,7 @@ keyRouter.use(express.json());
 keyRouter.route('/', function(req, res, next) {
   res.send('You cannot have all my keys.');
 }).post((req, res, next) => {
-    console.log(`logging body ${req.body}`)
+    console.log(`logging body ${req.body.name}`)
     KeyStore.create(req.body)
     .then(key => {
         console.log('key created ', key);

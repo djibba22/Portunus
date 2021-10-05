@@ -3,14 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portunus</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/landing.css">
 </head>
 
@@ -27,42 +26,6 @@
                         </span>
                     </div>
                     <div id="navbarMenu" class="navbar-menu">
-                        <!-- <div class="navbar-end">
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="#">
-                                    <span class="icon">
-                                        <i class="fa fa-home"></i>
-                                    </span>
-                                    <span>Home</span>
-                                </a>
-                            </span>
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="#">
-                                    <span class="icon">
-                                        <i class="fa fa-superpowers"></i>
-                                    </span>
-                                    <span>Examples</span>
-                                </a>
-                            </span>
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="#">
-                                    <span class="icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span>Documentation</span>
-                                </a>
-                            </span>
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/landing.html">
-                                    <span class="icon">
-                                        <i class="fa fa-github"></i>
-                                    </span>
-                                    <span>View Source</span>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div> -->
             </nav>
             </div>
 
@@ -78,13 +41,13 @@
                         <div class="box">
                             <div class="field is-grouped">
                                 <p class="control is-expanded">
-                                    <input class="input" type="text" placeholder="Enter Key Name">
+                                    <input id="keyName"class="input" type="text" placeholder="Enter Key Name">
                                 </p>
                                 <p class="control is-expanded">
-                                  <input class="input" type="text" placeholder="Enter your secret key">
+                                  <input id="keyValue" class="input" type="text" placeholder="Enter your secret key">
                               </p>
                                 <p class="control">
-                                    <a class="button is-info">
+                                    <a class="button is-info add">
                                         Save my Key
                                     </a>
                                 </p>
@@ -93,9 +56,28 @@
                     </div>
                 </div>
             </div>
-
     </section>
-    <script async type="text/javascript" src="../js/bulma.js"></script>
+    <!-- todo add section with usage instructions -->
+    <section class="section is-medium is-info center">
+      <div class="container">
+        <h1 class="title">Safely store your API Key off of Github</h1>
+      </div>
+      <h2 class="subtitle">1. Add a name and value for your key in the form</h2>
+      <h2 class="subtitle">2. Place this code snippet into your JS file to retrieve it by your custom name.</h2>
+      <pre>
+        <code>
+          async function fetchKey() {
+            const response = await fetch('heroku.app/yourKeyName');
+            console.log(response);
+            const key = await response.json();
+            return key;
+          }
+          // Call this wherever you need your key.
+          const safeKey = fetchKey();
+        </code>
+      </pre>
+    </section>
+    <script src="./javascripts/scripts.js"></script>
 </body>
 
 </html>
