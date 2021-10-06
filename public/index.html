@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portunus</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.15.14/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/landing.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 
 <body>
@@ -30,29 +31,41 @@
             </div>
 
             <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-6 is-offset-3">
+                <div class="container columns ">
+                    <div class="column has-text-centered ">
                         <h1 class="title">
                            Portunus
                         </h1>
                         <h2 class="subtitle">
                             The keeper of Keys. The weilder of secrets.
                         </h2>
+                        <div class="notification is-success hide good-note">
+                          <button class="delete"></button>
+                           Your key has been succesfully Stored 🤸‍♀️  
+                        </div>
+                        <div class="notify"></div>
+                        <div class="notification is-danger hide bad-note">
+                          <button class="delete remove"></button>
+                           You have to add both a name and a key <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        </div>
                         <div class="box">
                             <div class="field is-grouped">
                                 <p class="control is-expanded">
-                                    <input id="keyName"class="input" type="text" placeholder="Enter Key Name">
+                                    <input id="keyName"class="input" type="text" placeholder="Enter Key Name" required>
                                 </p>
                                 <p class="control is-expanded">
-                                  <input id="keyValue" class="input" type="text" placeholder="Enter your secret key">
+                                  <input id="keyValue" class="input" type="text" placeholder="Enter your secret key" required>
                               </p>
-                                <p class="control">
-                                    <a class="button is-info add">
-                                        Save my Key 🤟🏼
-                                    </a>
-                                </p>
+                              <p class="control is-expanded">
+                                  <a class="button is-info add">
+                                    <i class="fa fa-hdd-o" aria-hidden="true"></i> Store My Key 
+                                  </a>
+                              </p>
                             </div>
                         </div>
+                    </div>
+                    <div class="column ">
+                      <div class="snippet"></div>
                     </div>
                 </div>
             </div>
@@ -71,24 +84,6 @@
           </div>
         </div>
       </div>
-      <h2 class="subtitle">1. Add a name and value for your key in the form</h2>
-      <h2 class="subtitle">2. Place this code snippet into your JS file to retrieve it by your custom name.</h2>
-      <pre class="box">
-        <code>
-          // This calls the API, just update the url to have your key's name.
-          async function fetchKey() {
-              const url = 'https://cors-anywhere.herokuapp.com/https://yorkieportunus.herokuapp.com/store/mykey'
-              const response = await fetch(url);
-              const key = await response.json();
-              return key;
-          }
-          // Call this wherever you need your key.
-          fetchKey().then((key) => {
-              secretKey = key.apiKey;
-              console.info(`Your key on Portunus => ${secretKey}`);
-          });
-        </code>
-      </pre>
     </section>
     <script src="./javascripts/scripts.js"></script>
 </body>
