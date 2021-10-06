@@ -2,91 +2,146 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portunus</title>
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <!-- Bulma Version 0.9.0-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/landing.css">
-    <link rel="stylesheet" href="./stylesheets/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portunus</title>
+  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <!-- Bulma Version 0.9.0-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/landing.css">
+  <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 
 <body>
-    <section class="hero is-info is-fullheight">
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <span class="navbar-burger burger" data-target="navbarMenu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenu" class="navbar-menu">
-            </nav>
-            </div>
-
-            <div class="hero-body">
-                <div class="container columns ">
-                    <div class="column has-text-centered ">
-                        <h1 class="title">
-                           Portunus
-                        </h1>
-                        <h2 class="subtitle">
-                            The keeper of Keys. The weilder of secrets.
-                        </h2>
-                        <div class="notification is-success hide good-note">
-                          <button class="delete"></button>
-                           Your key has been succesfully Stored 🤸‍♀️  
-                        </div>
-                        <div class="notify"></div>
-                        <div class="notification is-danger hide bad-note">
-                          <button class="delete remove"></button>
-                           You have to add both a name and a key <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                        </div>
-                        <div class="box">
-                            <div class="field is-grouped">
-                                <p class="control is-expanded">
-                                    <input id="keyName"class="input" type="text" placeholder="Enter Key Name" required>
-                                </p>
-                                <p class="control is-expanded">
-                                  <input id="keyValue" class="input" type="text" placeholder="Enter your secret key" required>
-                              </p>
-                              <p class="control is-expanded">
-                                  <a class="button is-info add">
-                                    <i class="fa fa-hdd-o" aria-hidden="true"></i> Store My Key 
-                                  </a>
-                              </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column ">
-                      <div class="snippet"></div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <!-- todo add section with usage instructions -->
-    <section class="section is-medium is-info center">
-      <div class="container">
-        <div class="columns">
-          <div class="column box">
-            <img src="./images/keywarning.png" alt="github warning" srcset="">
+  <section class="hero is-info is-fullheight">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </div>
-          <div class="column">
-            <h1 class="title is-primary">Safely store your API Key off of Github</h1>
-            <p>We have all seen the warning with storing sensitive data on github. When you are using free api keys and deploying to gh-pages this can be a pain. Without server side code there is no place to safely store these credentials, yet make them available on gh-pages.</p>
-            <p>This is where Portunus steps in. A simple solution to a painful problem. Create a new name for your key and store the actual value some where else. Simply make a request from your application to load your key and github will never know a thing.</p>
+          <div id="navbarMenu" class="navbar-menu">
+      </nav>
+    </div>
+
+    <div class="hero-body">
+      <div class="container columns ">
+        <div class="column has-text-centered ">
+          <h1 class="title">
+            Portunus
+          </h1>
+          <h2 class="subtitle">
+            The keeper of Keys. The weilder of secrets.
+          </h2>
+          <div class="notification is-success hide good-note">
+            <button class="delete"></button>
+            Your key has been succesfully Stored 🤸‍♀️
+          </div>
+          <div class="notify"></div>
+          <div class="notification is-danger hide bad-note">
+            <button class="delete remove"></button>
+            You have to add both a name and a key <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          </div>
+          <div class="box">
+            <div class="field is-grouped">
+              <p class="control is-expanded">
+                <input id="keyName" class="input" type="text" placeholder="Enter Key Name" required>
+              </p>
+              <p class="control is-expanded">
+                <input id="keyValue" class="input" type="text" placeholder="Enter your secret key" required>
+              </p>
+              <p class="control is-expanded">
+                <a class="button is-info add">
+                  <i class="fa fa-hdd-o" aria-hidden="true"></i> Store My Key
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column ">
+          <div class="snippet"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- todo add section with usage instructions -->
+  <section class="section is-medium is-info center">
+    <div class="container">
+      <div class="columns">
+        <div class="column box">
+          <img src="./images/keywarning.png" alt="github warning" srcset="">
+        </div>
+        <div class="column">
+          <h1 class="title is-primary">Safely store your API Key off of Github</h1>
+          <hr>
+          <p>We have all seen the warning with storing sensitive data on github. When you are using free api keys and
+            deploying to gh-pages this can be a pain. Without server side code there is no place to safely store these
+            credentials, yet make them available on gh-pages.</p>
+          <p>This is where Portunus steps in. A simple solution to a painful problem. Create a new name for your key and
+            store the actual value some where else. Simply make a request from your application to load your key and
+            github will never know a thing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section is-medium is-info center">
+    <div class="container">
+      <div class="columns">
+        <!-- second column  -->
+        <div class="column">
+          <h1 class="title is-primary">Suggestions || Feedback</h1>
+          <hr>
+          <p>This is version 1.1.1 so there are lots of issues and improvements to be made. If you have a suggestion let
+            me know, there is also the repo on Github if you would like to fork it and submit a PR. I will take a look.
+          </p>
+          <hr>
+          <a href="https://github.com/djibba22/Portunus">Repo</a>
+        </div>
+        <div class="column box">
+          <!-- text input -->
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-success" type="text" placeholder="Chance to be witty">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          <!-- text box input -->
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="How would you do it?"></textarea>
+            </div>
+          </div>
+          <!-- submit button -->
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link">Submit</button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <script src="./javascripts/scripts.js"></script>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        powered by <a href="https://www.mongodb.com/cloud/atlas/"><strong>MongoDB Atlas</strong></a> and <a href="https://github.com/djibba22"><strong>Github</strong></a>
+      </p>
+    </div>
+  </footer>
+  <script src="./javascripts/scripts.js"></script>
 </body>
 
 </html>
-

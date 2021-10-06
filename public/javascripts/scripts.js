@@ -34,6 +34,7 @@ const storeKey = (e) => {
           // Call this wherever you need your key.
           fetchKey().then((key) => {
               secretKey = key.apiKey;
+              console.log(secretKey);
           });
         </code>
       </pre>`;
