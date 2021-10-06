@@ -70,7 +70,10 @@ const removeNote = (e) => {
     console.log("clicking");
     e.target.parentElement.remove();
 }
-
+/**
+ * @todo Write the click listener for the comments form.
+ * @todo POST to comments function (Require the router in app.js).
+ */
 // add click listener
 addButton.addEventListener("click", storeKey);
 deleteBtn.addEventListener("click",removeNote); 

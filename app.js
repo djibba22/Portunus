@@ -3,9 +3,10 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan'); 
-require('dotenv').config()
+const cors = require('cors');
+require('dotenv').config();
 
-
+app.use(cors());
 var port = process.env.PORT || '3000';
 
 const mongoose = require('mongoose');
