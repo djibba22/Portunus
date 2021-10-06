@@ -5,9 +5,10 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan'); 
 const cors = require('cors');
 require('dotenv').config();
+const app = express();
 
-app.use(cors());
-var port = process.env.PORT || '3000';
+
+let port = process.env.PORT || '3000';
 
 const mongoose = require('mongoose');
 
@@ -26,9 +27,9 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const keyRouter = require('./routes/store');
 
-const app = express();
 
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
