@@ -26,7 +26,7 @@ const storeKey = (e) => {
         <code>
           // This calls the API, just update the url to have your key's name.
           async function fetchKey() {
-              const url = 'https://cors-anywhere.herokuapp.com/https://yorkieportunus.herokuapp.com/store/${yourKey.name}'
+              const url = 'https://yorkieportunus.herokuapp.com/store/${yourKey.name}'
               const response = await fetch(url);
               const key = await response.json();
               return key;
