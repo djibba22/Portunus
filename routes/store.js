@@ -1,5 +1,6 @@
 var express = require('express');
 var keyRouter = express.Router();
+const CryptoJS = require("crypto-js");
 const KeyStore = require('../models/keys');
 
 keyRouter.use(express.json());
@@ -7,7 +8,6 @@ keyRouter.use(express.json());
 keyRouter.route('/', function(req, res, next) {
   res.send('You cannot have all my keys.');
 }).post((req, res, next) => {
-    console.log(`logging body ${req.body.name}`)
     KeyStore.create(req.body)
     .then(key => {
         console.log('key created ', key);
@@ -24,6 +24,10 @@ keyRouter.route('/:key')
     .then(key => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
+        var bytes  = CryptoJS.AES.decrypt(key.apiKey, process.env.SECRET_STRING);
+        var originalKey = bytes.toString(CryptoJS.enc.Utf8);
+        console.log("Original Key", originalKey);
+        key.apiKey = originalKey
         res.json(key);
     })
     .catch(err => next(err));
