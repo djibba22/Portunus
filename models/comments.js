@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
+/**
+ * This is a future model adding a feature for application feedback
+ */
 const commentsSchema = new Schema({
     title: {
         type: String,
@@ -17,6 +19,6 @@ const commentsSchema = new Schema({
 });
 
 
-const Comments = mongoose.model('KeyStore', commentsSchema);
+const Comments = mongoose.model('Comments', commentsSchema);
 
 module.exports = Comments;
