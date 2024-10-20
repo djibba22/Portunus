@@ -26,7 +26,7 @@ const storeKey = (e) => {
         <code>
           // This calls the API, just update the url to have your key's name.
           async function fetchKey() {
-              const url = 'https://yorkieportunus.herokuapp.com/store/${yourKey.name.split(' ').join('')}'
+              const url = 'https://portunus-37606f126db8.herokuapp.com/store/${yourKey.name.split(' ').join('')}'
               console.log(url)
               const response = await fetch(url);
               const key = await response.json();
@@ -80,7 +80,21 @@ addButton.addEventListener("click", storeKey);
 deleteBtn.addEventListener("click",removeNote); 
 removeBtn.addEventListener("click",removeNote); 
 
-
+        
+          // This calls the API, just update the url to have your key's name.
+          async function fetchKey() {
+            const url = 'https://portunus-37606f126db8.herokuapp.com/store/thisonehasspaces'
+            const response = await fetch(url);
+            const key = await response.json();
+            return key;
+        }
+        // Call this wherever you need your key.
+        fetchKey().then((key) => {
+            secretKey = key.apiKey;
+            console.log(secretKey);
+        });
+      
+    
         
                      
  
