@@ -4,7 +4,8 @@
   "private": true,
   "stack": "heroku-22",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "watch":"nodemon app"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

@@ -7,7 +7,7 @@ const storeKey = (e) => {
     e.preventDefault();
     // grab the values
     const data = {
-        name:document.getElementById("keyName").value,
+        name:document.getElementById("keyName").value.split(' ').join(''),
         apiKey: document.getElementById("keyValue").value
     }
 
@@ -26,7 +26,8 @@ const storeKey = (e) => {
         <code>
           // This calls the API, just update the url to have your key's name.
           async function fetchKey() {
-              const url = 'https://yorkieportunus.herokuapp.com/store/${yourKey.name}'
+              const url = 'https://yorkieportunus.herokuapp.com/store/${yourKey.name.split(' ').join('')}'
+              console.log(url)
               const response = await fetch(url);
               const key = await response.json();
               return key;
@@ -78,3 +79,17 @@ const removeNote = (e) => {
 addButton.addEventListener("click", storeKey);
 deleteBtn.addEventListener("click",removeNote); 
 removeBtn.addEventListener("click",removeNote); 
+
+
+        
+                     
+ 
+          
+  
+      
+    
+        
+      
+    
+      
+    
